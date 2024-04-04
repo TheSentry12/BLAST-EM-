@@ -47,9 +47,9 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log("collide");
-        if (collision != null && collision.gameObject.CompareTag("Bullet"))
+        if (collision != null && collision.gameObject.CompareTag("Missle"))
         {
-            GameManager.Instance.SetPlayerPoints(1);
+            //GameManager.Instance.SetPlayerPoints(1);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
