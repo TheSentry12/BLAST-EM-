@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -23,4 +26,21 @@ public class PlayerHealth : MonoBehaviour
     {
         return health;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Debug.Log("collide");
+        if (collision != null && collision.gameObject.CompareTag("Enemy"))
+        {
+
+            //Destroy(this.gameObject);
+            //Destroy(collision.gameObject);
+            SceneManager.LoadScene(2);
+
+
+        }
+       
+        
+    }
+        
 }
+

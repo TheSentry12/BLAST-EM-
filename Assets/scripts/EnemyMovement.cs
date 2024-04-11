@@ -50,6 +50,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision != null && collision.gameObject.CompareTag("Missle"))
         {
             //GameManager.Instance.SetPlayerPoints(1);
+            GameObject.Find("Player").GetComponent<PlayerMovement>().eneminesKilled += 1;
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
